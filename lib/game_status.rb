@@ -22,6 +22,7 @@ def won?(board)
     win_combo.all? do |win_index|
       board[win_index] == "X" || board [win_index] == "O"
     end
+    return win_combo
   end
   return false
 end
