@@ -16,20 +16,3 @@ WIN_COMBINATIONS = [
   [0, 4, 8],
   [2, 4, 6]
 ]
-
-def won?(board)
-  WIN_COMBINATIONS.each do |win_combo|
-    if win_combo.all? do |location|
-      board[location] == "X" || board[location] == "O"
-      return win_combo
-    end
-  end
-  if board.empty? == true
-    return false
-  end
-  if board.all? {|spot| spot == "X" || spot == "O"}
-    return false
-  end
-end
-return false
-end
