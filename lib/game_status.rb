@@ -4,3 +4,30 @@ def position_taken?(board, index)
 end
 
 # Define your WIN_COMBINATIONS constant
+WIN_COMBINATIONS = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6]
+]
+
+def won?(board)
+  if board == []
+    return false 
+  WIN_COMBINATIONS.find do |win_combo|
+    board[win_combo].each do |location|
+      if position_taken?(board, location)
+        location.all? do |symbol|
+          symbol == "X" || symbol =="O"
+          return win_combo
+        end
+      else
+        return false
+      end
+    end
+  end
+end
