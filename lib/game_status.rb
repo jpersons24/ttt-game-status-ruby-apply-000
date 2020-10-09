@@ -25,4 +25,5 @@ def won?(board)
   end
   if position_taken?(board, index)
     return false
+  end
 end
