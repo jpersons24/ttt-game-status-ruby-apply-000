@@ -23,7 +23,6 @@ def won?(board)
       board[win_index] == "X" || board [win_index] == "O"
     end
   end
-  if position_taken?(board, index)
-    return false
+  if position_taken?(board, win_combo)
   end
 end
