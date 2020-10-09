@@ -15,19 +15,4 @@ WIN_COMBINATIONS = [
   [2, 4, 6]
 ]
 
-def won?(board)
-  if board == []
-    return false 
-  WIN_COMBINATIONS.find do |win_combo|
-    board[win_combo].each do |location|
-      if position_taken?(board, location)
-        location.all? do |symbol|
-          symbol == "X" || symbol =="O"
-          return win_combo
-        end
-      else
-        return false
-      end
-    end
-  end
-end
+
